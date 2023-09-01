@@ -4,6 +4,7 @@ static var max_level = 10
 
 signal action_ready(actor)
 
+@export var label := ""
 @export var type : Resource
 @export var health : HealthComponent
 @export var attack : ActionComponent
@@ -69,4 +70,5 @@ func is_action_ready():
 
 func _on_speed_timer_finished():
 	emit_signal("action_ready", self)
-	
+
+

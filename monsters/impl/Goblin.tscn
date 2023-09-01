@@ -8,6 +8,7 @@
 
 [node name="Goblin" type="Node2D" node_paths=PackedStringArray("health", "attack", "speed")]
 script = ExtResource("1_o0eqo")
+label = "Goblin"
 type = ExtResource("2_xrigj")
 health = NodePath("HealthComponent")
 attack = NodePath("AttackComponent")

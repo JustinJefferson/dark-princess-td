@@ -1,6 +1,162 @@
-[gd_scene load_steps=2 format=3 uid="uid://byibs62jbfomd"]
+[gd_scene load_steps=8 format=3 uid="uid://byibs62jbfomd"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_4adg4"]
+[ext_resource type="Texture2D" uid="uid://g0tq1116ordq" path="res://icon.svg" id="2_atqf1"]
+[ext_resource type="PackedScene" uid="uid://ckkyfhmon3qiw" path="res://PlayerActionButton.tscn" id="3_sigib"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0ymf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ld4o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sk1ex"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vty4"]
+bg_color = Color(0.701961, 0.309804, 0.301961, 1)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_4adg4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -158.0
+offset_right = 54.0
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="MenuButtons" type="VBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/MenuButtons"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_m0ymf")
+text = "Floors"
+icon = ExtResource("2_atqf1")
+clip_text = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Button2" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/MenuButtons"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_m0ymf")
+text = "Monsters"
+icon = ExtResource("2_atqf1")
+clip_text = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Button3" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/MenuButtons"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_m0ymf")
+text = "Spells"
+icon = ExtResource("2_atqf1")
+clip_text = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ld4o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Fighter"
+
+[node name="Button2" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Ranged"
+
+[node name="Button3" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Mystic"
+
+[node name="Button4" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Generic"
+
+[node name="Button5" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Support"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sk1ex")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="CenterContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_sigib")]
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button4" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/VBoxContainer/ScrollContainer/GridContainer/CenterContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1vty4")
+text = "Spells"
+icon = ExtResource("2_atqf1")
+clip_text = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="CenterContainer3" type="CenterContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button4" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/VBoxContainer/ScrollContainer/GridContainer/CenterContainer3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1vty4")
+text = "Spells"
+icon = ExtResource("2_atqf1")
+clip_text = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(450, 480)
+color = Color(0.47451, 0.384314, 0.384314, 1)
+polygon = PackedVector2Array(0, 0, 300, 0, 300, 150, 0, 150)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(450, 315)
+color = Color(0.47451, 0.384314, 0.384314, 1)
+polygon = PackedVector2Array(0, 0, 300, 0, 300, 150, 0, 150)

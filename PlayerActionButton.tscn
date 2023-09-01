@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckkyfhmon3qiw"]
+
+[ext_resource type="Texture2D" uid="uid://g0tq1116ordq" path="res://icon.svg" id="1_74hbw"]
+[ext_resource type="Script" path="res://PlayerActionButton.gd" id="1_214s0"]
+[ext_resource type="PackedScene" uid="uid://dhr136mwwxtd4" path="res://monsters/impl/Goblin.tscn" id="2_t7o0k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vty4"]
+bg_color = Color(0.701961, 0.309804, 0.301961, 1)
+
+[node name="PlayerActionButton" type="CenterContainer" node_paths=PackedStringArray("button")]
+size_flags_horizontal = 3
+script = ExtResource("1_214s0")
+button = NodePath("Button")
+scene_ref = ExtResource("2_t7o0k")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1vty4")
+text = "Spells"
+icon = ExtResource("1_74hbw")
+clip_text = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
