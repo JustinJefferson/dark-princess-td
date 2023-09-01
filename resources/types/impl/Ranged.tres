@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Type" load_steps=2 format=3 uid="uid://cyx1olnstv3ll"]
+
+[ext_resource type="Script" path="res://resources/types/Type.gd" id="1_pgsqg"]
+
+[resource]
+script = ExtResource("1_pgsqg")
+label = "Ranged"
+value = 2

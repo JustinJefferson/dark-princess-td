@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccj1hytxy5qx"]
+
+[ext_resource type="Script" path="res://monsters/Monster.gd" id="1_wm3j2"]
+[ext_resource type="Resource" uid="uid://c50fcxhou0p6r" path="res://resources/types/impl/Fighter.tres" id="2_ok5nr"]
+[ext_resource type="Script" path="res://components/HealthComponent.gd" id="3_gumdk"]
+[ext_resource type="Script" path="res://components/AttackComponent.gd" id="4_rrwqe"]
+[ext_resource type="Script" path="res://components/SpeedComponent.gd" id="5_qngre"]
+
+[node name="Monster" type="Node2D" node_paths=PackedStringArray("health", "attack", "speed")]
+script = ExtResource("1_wm3j2")
+type = ExtResource("2_ok5nr")
+health = NodePath("HealthComponent")
+attack = NodePath("AttackComponent")
+speed = NodePath("SpeedComponent")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("3_gumdk")
+
+[node name="AttackComponent" type="Node" parent="."]
+script = ExtResource("4_rrwqe")
+
+[node name="SpeedComponent" type="Node" parent="."]
+script = ExtResource("5_qngre")

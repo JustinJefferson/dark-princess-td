@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://b85iifogjc5v0"]
+
+[ext_resource type="Script" path="res://adventurers/Adventurer.gd" id="1_44it1"]
+[ext_resource type="Resource" uid="uid://lba38rxtsdt" path="res://resources/types/impl/Generic.tres" id="2_5xqdh"]
+[ext_resource type="Script" path="res://components/HealthComponent.gd" id="3_78icx"]
+[ext_resource type="Script" path="res://components/AttackComponent.gd" id="4_w181j"]
+[ext_resource type="Script" path="res://components/SpeedComponent.gd" id="5_uphl4"]
+
+[node name="Adventurer" type="Node2D" node_paths=PackedStringArray("health", "action_component", "speed", "battle_time")]
+script = ExtResource("1_44it1")
+type = ExtResource("2_5xqdh")
+health = NodePath("HealthComponent")
+action_component = NodePath("AttackComponent")
+speed = NodePath("SpeedComponent")
+battle_time = NodePath("BattleTimeComponent")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("3_78icx")
+
+[node name="AttackComponent" type="Node" parent="."]
+script = ExtResource("4_w181j")
+base_lvl_damage = 3
+max_lvl_damage = 15
+
+[node name="SpeedComponent" type="Node" parent="."]
+script = ExtResource("5_uphl4")
+speed = 12
+
+[node name="BattleTimeComponent" type="Node" parent="."]
+script = ExtResource("5_uphl4")

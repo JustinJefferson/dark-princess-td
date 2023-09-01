@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4w41puolixks"]
+
+[ext_resource type="Script" path="res://monsters/Monster.gd" id="1_p8121"]
+[ext_resource type="Resource" uid="uid://c50fcxhou0p6r" path="res://resources/types/impl/Fighter.tres" id="2_5g41d"]
+[ext_resource type="Script" path="res://components/HealthComponent.gd" id="3_tl6y2"]
+[ext_resource type="Script" path="res://components/AttackComponent.gd" id="4_vq3po"]
+[ext_resource type="Script" path="res://components/SpeedComponent.gd" id="5_veepd"]
+
+[node name="Golem" type="Node2D" node_paths=PackedStringArray("health", "attack", "speed")]
+script = ExtResource("1_p8121")
+type = ExtResource("2_5g41d")
+health = NodePath("HealthComponent")
+attack = NodePath("AttackComponent")
+speed = NodePath("SpeedComponent")
+size = 2
+cost = 40
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("3_tl6y2")
+base_lvl_health = 40
+max_lvl_health = 160
+
+[node name="AttackComponent" type="Node" parent="."]
+script = ExtResource("4_vq3po")
+base_lvl_damage = 20
+max_lvl_damage = 60
+
+[node name="SpeedComponent" type="Node" parent="."]
+script = ExtResource("5_veepd")
+speed = 12

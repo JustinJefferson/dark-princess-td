@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhr136mwwxtd4"]
+
+[ext_resource type="Script" path="res://monsters/Monster.gd" id="1_o0eqo"]
+[ext_resource type="Resource" uid="uid://c50fcxhou0p6r" path="res://resources/types/impl/Fighter.tres" id="2_xrigj"]
+[ext_resource type="Script" path="res://components/HealthComponent.gd" id="3_67w52"]
+[ext_resource type="Script" path="res://components/AttackComponent.gd" id="4_h7wlm"]
+[ext_resource type="Script" path="res://components/SpeedComponent.gd" id="5_jcjlf"]
+
+[node name="Goblin" type="Node2D" node_paths=PackedStringArray("health", "attack", "speed")]
+script = ExtResource("1_o0eqo")
+type = ExtResource("2_xrigj")
+health = NodePath("HealthComponent")
+attack = NodePath("AttackComponent")
+speed = NodePath("SpeedComponent")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("3_67w52")
+base_lvl_health = 20
+max_lvl_health = 80
+
+[node name="AttackComponent" type="Node" parent="."]
+script = ExtResource("4_h7wlm")
+
+[node name="SpeedComponent" type="Node" parent="."]
+script = ExtResource("5_jcjlf")

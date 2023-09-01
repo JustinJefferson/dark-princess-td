@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl4k1yofklhjd"]
+
+[ext_resource type="Script" path="res://monsters/Monster.gd" id="1_01s4p"]
+[ext_resource type="Resource" uid="uid://cyx1olnstv3ll" path="res://resources/types/impl/Ranged.tres" id="2_w001p"]
+[ext_resource type="Script" path="res://components/HealthComponent.gd" id="3_4chj7"]
+[ext_resource type="Script" path="res://components/AttackComponent.gd" id="4_d2awj"]
+[ext_resource type="Script" path="res://components/SpeedComponent.gd" id="5_et7u4"]
+
+[node name="Imp" type="Node2D" node_paths=PackedStringArray("health", "attack", "speed")]
+script = ExtResource("1_01s4p")
+type = ExtResource("2_w001p")
+health = NodePath("HealthComponent")
+attack = NodePath("AttackComponent")
+speed = NodePath("SpeedComponent")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("3_4chj7")
+base_lvl_health = 20
+max_lvl_health = 80
+
+[node name="AttackComponent" type="Node" parent="."]
+script = ExtResource("4_d2awj")
+base_lvl_damage = 2
+max_lvl_damage = 15
+
+[node name="SpeedComponent" type="Node" parent="."]
+script = ExtResource("5_et7u4")
+speed = 6

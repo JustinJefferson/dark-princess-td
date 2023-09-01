@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6mnpxsc2ijho"]
+
+[ext_resource type="Script" path="res://floors/Floor.gd" id="1_qtxnk"]
+[ext_resource type="Resource" uid="uid://c50fcxhou0p6r" path="res://resources/types/impl/Fighter.tres" id="2_hllbq"]
+[ext_resource type="Script" path="res://components/HealthComponent.gd" id="3_cfec1"]
+[ext_resource type="Script" path="res://components/AttackComponent.gd" id="4_gyg41"]
+[ext_resource type="Script" path="res://components/SpeedComponent.gd" id="5_mj2f2"]
+
+[node name="Floor" type="Node2D" node_paths=PackedStringArray("health", "action_component", "speed")]
+script = ExtResource("1_qtxnk")
+type = ExtResource("2_hllbq")
+health = NodePath("HealthComponent")
+action_component = NodePath("AttackComponent")
+speed = NodePath("SpeedComponent")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("3_cfec1")
+base_lvl_health = 80
+
+[node name="AttackComponent" type="Node" parent="."]
+script = ExtResource("4_gyg41")
+base_lvl_damage = 20
+
+[node name="SpeedComponent" type="Node" parent="."]
+script = ExtResource("5_mj2f2")
+speed = 16
