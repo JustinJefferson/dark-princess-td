@@ -6,11 +6,12 @@
 [ext_resource type="Script" path="res://components/AttackComponent.gd" id="4_vq3po"]
 [ext_resource type="Script" path="res://components/SpeedComponent.gd" id="5_veepd"]
 
-[node name="Golem" type="Node2D" node_paths=PackedStringArray("health", "attack", "speed")]
+[node name="Golem" type="Node2D" node_paths=PackedStringArray("health", "action_component", "speed")]
 script = ExtResource("1_p8121")
+label = "Golem"
 type = ExtResource("2_5g41d")
 health = NodePath("HealthComponent")
-attack = NodePath("AttackComponent")
+action_component = NodePath("AttackComponent")
 speed = NodePath("SpeedComponent")
 size = 2
 cost = 40

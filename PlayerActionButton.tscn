@@ -14,8 +14,9 @@ button = NodePath("Button")
 scene_ref = ExtResource("2_t7o0k")
 
 [node name="Button" type="Button" parent="."]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+theme_override_constants/icon_max_width = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_1vty4")
 text = "Spells"
 icon = ExtResource("1_74hbw")

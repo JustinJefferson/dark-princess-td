@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://vgygowadq4lu"]
+
+[ext_resource type="Script" path="res://PlayerActionTabMenu.gd" id="1_dwbnx"]
+[ext_resource type="Texture2D" uid="uid://g0tq1116ordq" path="res://icon.svg" id="1_xitk3"]
+[ext_resource type="PackedScene" uid="uid://dbjk0l6rfwyi0" path="res://InfoPanel.tscn" id="2_dy1cy"]
+[ext_resource type="PackedScene" uid="uid://btn1gfm2x8stn" path="res://PlayerActionMenu.tscn" id="3_puqf2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0ymf"]
+
+[node name="PlayerActionTabMenu" type="MarginContainer" node_paths=PackedStringArray("floor_tab", "monster_tab", "spell_tab", "menu", "info_panel")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -158.0
+offset_right = 54.0
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_dwbnx")
+floor_tab = NodePath("HBoxContainer/MenuButtons/Button")
+monster_tab = NodePath("HBoxContainer/MenuButtons/Button2")
+spell_tab = NodePath("HBoxContainer/MenuButtons/Button3")
+menu = NodePath("HBoxContainer/VBoxContainer2/MenuPanel")
+info_panel = NodePath("HBoxContainer/VBoxContainer2/InfoPanel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MenuButtons" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/MenuButtons"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_m0ymf")
+toggle_mode = true
+text = "Floors"
+icon = ExtResource("1_xitk3")
+clip_text = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Button2" type="Button" parent="HBoxContainer/MenuButtons"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_m0ymf")
+toggle_mode = true
+text = "Monsters"
+icon = ExtResource("1_xitk3")
+clip_text = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Button3" type="Button" parent="HBoxContainer/MenuButtons"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_m0ymf")
+toggle_mode = true
+text = "Spells"
+icon = ExtResource("1_xitk3")
+clip_text = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="InfoPanel" parent="HBoxContainer/VBoxContainer2" instance=ExtResource("2_dy1cy")]
+layout_mode = 2
+
+[node name="MenuPanel" parent="HBoxContainer/VBoxContainer2" node_paths=PackedStringArray("filter_buttons") instance=ExtResource("3_puqf2")]
+layout_mode = 2
+filter_buttons = [null, null, null, null, null]

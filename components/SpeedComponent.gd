@@ -16,6 +16,7 @@ enum Speed {
 
 var timer = Timer.new()
 var timer_ready = false
+var label : get = _get_label
 
 func _ready():
 	timer.timeout.connect(_on_timeout)
@@ -27,4 +28,20 @@ func reset():
 
 func _on_timeout():
 	timer_ready = true
+
+
+func _get_label():
+	match speed:
+		Speed.VERY_FAST:
+			return "Very Fast"
+		Speed.FAST:
+			return "Fast"
+		Speed.NORMAL:
+			return "Normal"
+		Speed.SLOW:
+			return "Slow"
+		Speed.VERY_SLOW:
+			return "Very Slow"
+		Speed.EXTREMELY_SLOW:
+			return "Extremely Slow"
 

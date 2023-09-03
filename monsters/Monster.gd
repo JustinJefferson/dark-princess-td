@@ -7,7 +7,7 @@ signal action_ready(actor)
 @export var label := ""
 @export var type : Resource
 @export var health : HealthComponent
-@export var attack : ActionComponent
+@export var action_component : ActionComponent
 @export var speed : SpeedComponent
 @export_range(1, 3)
 var size = 1
@@ -28,7 +28,7 @@ func _process(delta):
 	pass
 
 func create_action() -> Action:
-	var action = attack.create_action()
+	var action = action_component.create_action()
 	action.actor = self
 	return action
 
@@ -58,8 +58,8 @@ func level_up():
 	if health != null:
 		health.update(level, max_level)
 	
-	if attack != null:
-		attack.update(level, max_level)
+	if action_component != null:
+		action_component.update(level, max_level)
 
 
 func is_action_ready():

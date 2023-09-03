@@ -6,11 +6,12 @@
 [ext_resource type="Script" path="res://components/AttackComponent.gd" id="4_d2awj"]
 [ext_resource type="Script" path="res://components/SpeedComponent.gd" id="5_et7u4"]
 
-[node name="Imp" type="Node2D" node_paths=PackedStringArray("health", "attack", "speed")]
+[node name="Imp" type="Node2D" node_paths=PackedStringArray("health", "action_component", "speed")]
 script = ExtResource("1_01s4p")
+label = "Imp"
 type = ExtResource("2_w001p")
 health = NodePath("HealthComponent")
-attack = NodePath("AttackComponent")
+action_component = NodePath("AttackComponent")
 speed = NodePath("SpeedComponent")
 
 [node name="HealthComponent" type="Node" parent="."]

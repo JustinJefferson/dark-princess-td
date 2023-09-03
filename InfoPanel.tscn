@@ -1,0 +1,144 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbjk0l6rfwyi0"]
+
+[ext_resource type="Script" path="res://InfoPanel.gd" id="1_shy7w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mvb7u"]
+font_size = 24
+font_color = Color(0.65098, 0.196078, 0.65098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sjdcm"]
+font_size = 24
+font_color = Color(0.65098, 0.196078, 0.65098, 1)
+
+[node name="InfoPanel" type="PanelContainer" node_paths=PackedStringArray("name_label", "group_label", "cost_label", "type_label", "type_value", "health_label", "health_value", "attack_label", "attack_value", "heal_label", "heal_value", "speed_label", "speed_value", "size_label", "size_value", "slots_label", "slots_value", "max_level_label", "max_level_value")]
+size_flags_horizontal = 0
+script = ExtResource("1_shy7w")
+name_label = NodePath("VBoxContainer/HBoxContainer/Label")
+group_label = NodePath("VBoxContainer/HBoxContainer/Label2")
+cost_label = NodePath("VBoxContainer/Cost")
+type_label = NodePath("VBoxContainer/GridContainer/Type")
+type_value = NodePath("VBoxContainer/GridContainer/TypeValue")
+health_label = NodePath("VBoxContainer/GridContainer/Health")
+health_value = NodePath("VBoxContainer/GridContainer/HealthValue")
+attack_label = NodePath("VBoxContainer/GridContainer/Attack")
+attack_value = NodePath("VBoxContainer/GridContainer/AttackValue")
+heal_label = NodePath("VBoxContainer/GridContainer/Heal")
+heal_value = NodePath("VBoxContainer/GridContainer/HealValue")
+speed_label = NodePath("VBoxContainer/GridContainer/Speed")
+speed_value = NodePath("VBoxContainer/GridContainer/SpeedValue")
+size_label = NodePath("VBoxContainer/GridContainer/Size")
+size_value = NodePath("VBoxContainer/GridContainer/SizeValue")
+slots_label = NodePath("VBoxContainer/GridContainer/Slots")
+slots_value = NodePath("VBoxContainer/GridContainer/SlotsValue")
+max_level_label = NodePath("VBoxContainer/GridContainer/MaxLevel")
+max_level_value = NodePath("VBoxContainer/GridContainer/MaxLevelValue")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Label Text"
+label_settings = SubResource("LabelSettings_mvb7u")
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Group Text"
+label_settings = SubResource("LabelSettings_sjdcm")
+horizontal_alignment = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Type" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Type"
+
+[node name="TypeValue" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Type Value"
+
+[node name="Health" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Health"
+
+[node name="HealthValue" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Health Value"
+
+[node name="Attack" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Attack"
+
+[node name="AttackValue" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Attack Value"
+
+[node name="Heal" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Heal"
+
+[node name="HealValue" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Heal Value"
+
+[node name="Speed" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Speed"
+
+[node name="SpeedValue" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Speed Value"
+
+[node name="Size" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Size"
+
+[node name="SizeValue" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Size Value"
+
+[node name="Slots" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Slots"
+
+[node name="SlotsValue" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Slots Value"
+
+[node name="MaxLevel" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Max Level"
+
+[node name="MaxLevelValue" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Max Level Value"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Cost" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Cost 30 Gold"
+label_settings = SubResource("LabelSettings_sjdcm")
+horizontal_alignment = 1

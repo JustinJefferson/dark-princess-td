@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://btn1gfm2x8stn"]
+
+[ext_resource type="PackedScene" uid="uid://ckkyfhmon3qiw" path="res://PlayerActionButton.tscn" id="1_nx3em"]
+[ext_resource type="Script" path="res://PlayerActionMenu.gd" id="1_rfas7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ld4o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sk1ex"]
+
+[node name="PlayerActionMenu" type="PanelContainer" node_paths=PackedStringArray("grid", "filter_buttons")]
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ld4o")
+script = ExtResource("1_rfas7")
+grid = NodePath("VBoxContainer/ScrollContainer/GridContainer")
+filter_buttons = [NodePath("VBoxContainer/HBoxContainer/Button"), NodePath("VBoxContainer/HBoxContainer/Button2"), NodePath("VBoxContainer/HBoxContainer/Button3"), NodePath("VBoxContainer/HBoxContainer/Button4"), NodePath("VBoxContainer/HBoxContainer/Button5")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Fighter"
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ranged"
+
+[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mystic"
+
+[node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Generic"
+
+[node name="Button5" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Support"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sk1ex")
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="CenterContainer" parent="VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_nx3em")]
+layout_mode = 2
+
+[node name="CenterContainer2" parent="VBoxContainer/ScrollContainer/GridContainer" node_paths=PackedStringArray("button") instance=ExtResource("1_nx3em")]
+layout_mode = 2
+button = NodePath("../CenterContainer/Button")
+
+[node name="CenterContainer3" parent="VBoxContainer/ScrollContainer/GridContainer" node_paths=PackedStringArray("button") instance=ExtResource("1_nx3em")]
+layout_mode = 2
+button = NodePath("../CenterContainer/Button")
